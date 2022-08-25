@@ -8,14 +8,16 @@ pipeline {
       steps {
         sh '''
                   echo  "PATH = $(PATH)"
-                  echo "" M2_Home = $(M2_HOME)"
+                  echo  " M2_Home = $(M2_HOME)"
            ''' 
     }
-    }
+   }
+    
     stage ('Build') {
       steps {
         sh 'mvn clean Package'
       }
     }
+  
   } 
 }
